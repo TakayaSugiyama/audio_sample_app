@@ -14,6 +14,7 @@ import * as FileSystem from "expo-file-system";
 import * as Font from "expo-font";
 import * as Permissions from "expo-permissions";
 
+// SET UP ICON
 class Icon {
   constructor(module, width, height) {
     this.module = module;
@@ -95,12 +96,14 @@ export default class App extends React.Component {
       rate: 1.0
     };
     this.recordingSettings = JSON.parse(
-      JSON.stringify(Audio.RECORDING_OPTIONS_PRESET_LOW_QUALITY)
+      JSON.stringify(Audio.RECORDING_OPTIONS_PRESET_HIGH_QUALITY)
     );
+    //console.log(Audio.RECORDING_OPTIONS_PRESET_HIGH_QUALITY);
     // // UNCOMMENT THIS TO TEST maxFileSize:
     // this.recordingSettings.android['maxFileSize'] = 12000;
   }
 
+  //カスタムフォントをダウンロード
   componentDidMount() {
     (async () => {
       await Font.loadAsync({
